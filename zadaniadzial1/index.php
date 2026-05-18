@@ -1,3 +1,19 @@
+<?php
+ echo '<p>Dział_6(ciasteczka)</p>';
+
+ setcookie("username", "Dawid" , time() + (86400 * 7), "/" );
+
+ $username = "Kuba";
+ if (isset($_COOKIE["username"])) {
+    echo "<p>ciasteczko: $username</p>";
+ }else{
+    echo "<p>brak zawartości w ciasteczku</p>";
+ };
+
+ setcookie("session_id", "", time() - 3600, "/");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +23,7 @@
 </head>
 <body>
     <?php
+    echo '<p>Dział_1</p>';
     $name = "Adrian";
     $age = 103;
     $country = "Poland";
@@ -35,7 +52,7 @@
     echo "<p>Suma = $suma | roznica = $roznica | iloczyn = $iloczyn | iloraz = $iloraz</p>";
 
     echo "<hr>";
-    
+    echo '<p>Dział_2</p>';
     $wiek = 17;
     if($wiek >= 18) {
         echo "Może głosować!";
@@ -84,7 +101,7 @@
     };
 
     echo"<hr>";
-
+    echo '<p>Dział_3</p>';
     for ($i = 1; $i <= 10; $i++){
         echo $i . " ";
     };
@@ -120,6 +137,7 @@
     echo "suma 1 do 100 wynosi: $sumka";
 
     echo "<hr>";
+    echo '<p>Dział_4</p>';
 
     $colors = ["czerwony", "niebieski", "zielony"];
     echo $colors[0];
@@ -140,7 +158,55 @@
         echo "<p>banan nie na tablicy</p>";
     };
 
-    
+    $user = [
+        'name' => 'Jan',
+        'age' => 28,
+        'city' => 'Warszawa'
+    ];
+    foreach(array_keys($user) as $keys){
+        echo $keys. "<hr>";
+    };
+    echo '<p>Dział_5</p>';
+
+    function sayHello() {
+        return "Witaj!";
+    };
+    // return !== echo
+    sayHello();
+    echo sayHello();
+    echo "<p><p>";
+
+    function multiply($a, $b) {
+        return $a * $b;
+    };
+    echo multiply($a, $b);
+
+    $xd = 10;
+    function isEven($n){
+        if ($n % 2 === 0){
+            echo "<p>Liczba parzysta = true</p>";
+        }else{
+            echo "<p>Liczba parzysta = False</p>";
+        };
+    };
+    isEven($xd);
+
+    $prices = 19.439;
+    function formatPrice($price){
+        return round($price, 2);
+    };
+    echo formatPrice($prices);
+
+    $nameik = "Piter";
+    $ageik = 23;
+    function greetUser($name, $age){
+        return "<p>Imie: $name, lat: $age</p>";
+    };
+    echo greetUser($nameik, $ageik);
+
+    echo "<hr>";
+    echo '<p>Dział_7</p>';
+
     ?>
 </body>
 </html>
