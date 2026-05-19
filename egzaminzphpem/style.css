@@ -1,0 +1,18 @@
+
+table{
+    display: flex;
+    height: 400px;
+}
+tr{
+    display: flex;
+    gap: 15px;
+}
+a{
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    background-color: gray;
+    color: white;
+}

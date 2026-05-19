@@ -1,9 +1,19 @@
+<?php
+$host = "localhost";
+$uzytkownik = "root";
+$haslo = "";
+$nazwaBazy = "pogoda";
+$conn = mysqli_connect($host, $uzytkownik, $haslo, $nazwaBazy);
+mysqli_set_charset($conn, "utf8");
+
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Temperatura w Lipcu</h1>
@@ -14,7 +24,29 @@
             <th>Temperatura</th>
             <th>Pogoda</th>
         </tr>
-       
+       <tr>
+        <?php
+        $sql = "SELECT m.nazwa, m.kraj, p.temperatura, ROUND(AVG(p.temperatura), 2) FROM miejscowosc m INNER JOIN pomiary p ON p.id_miejscowosc = m.id GROUP BY m.nazwa;";
+        $danepogody = mysql_query($conn, $sql);
+
+        if(mysqli_num_rows($danepogody) > 0){
+
+
+        while ($dane = mysqli_fetch_array($danepogody)){
+            echo "<tr>";
+            echo "<td>" . $dane["m.nazwa"] . "</td>";
+            echo "<td>" . $dane["m.kraj"] . "</td>";
+            echo "<td>" . $dane["p.temperatura"] . "</td>";
+            if ()
+            echo "</tr>";
+
+        };
+        };
+
+        mysqli_close($conn);
+
+        ?>
+       </tr>
     </table>
    <hr>
    <h2>Średnie temperatury w roku:</h2>
@@ -31,25 +63,6 @@
    <a href="index.php">Listopad</a>
    <a href="index.php">Grudzień</a>
 
-   <style>
-    table{
-        height: 400px;
-    }
-    tr{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap:10px;
-    }
-    a{
-        color: black;
-        text-decoration: none;
-        font-size: 30px;
-    }
-    a:hover{
-        background-color: gray;
-        color: white;
-    }
-   </style>
+   
 </body>
 </html>
