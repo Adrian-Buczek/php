@@ -1,6 +1,6 @@
 <?php
  echo '<p>Dział_6(ciasteczka)</p>';
-
+ session_start();
  setcookie("username", "Dawid" , time() + (86400 * 7), "/" );
 
  $username = "Kuba";
@@ -15,7 +15,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -206,6 +206,18 @@
 
     echo "<hr>";
     echo '<p>Dział_7</p>';
+    
+    $_SESSION["user_id"] = 1;
+    $_SESSION["username"] = "Maciej";
+    $_SESSION["email"] = "Maciejbut@gmail.com";
+    $_SESSION["usun"] = "dousuniecia";
+    if(isset($_SESSION["user_id"])) {
+        echo "<p>Dane użytwnika:</p>";
+    };
+
+    unset($_SESSION["usun"]);
+
+    session_destroy();
 
     ?>
 </body>
