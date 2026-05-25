@@ -215,10 +215,51 @@
         echo "<p>Dane użytwnika:</p>";
     };
 
+    if (!isset($_SESSION['jezyk'])) {
+        $_SESSION['jezyk'] = 'pl'; 
+    };
+
     unset($_SESSION["usun"]);
+
+
+    echo '<p>Dział 8</p>';
+
+  try{
+    $wyniczek = 35 / 0;
+
+  } catch (DivisionByZeroError $kom) {
+    echo "Błąd: " . $kom->getMessage();
+  };
+
+  $mailek = "ABCDEgmail.com";
+  try {
+    if(!str_contains($mailek, "@")){
+        throw new Exception('<p>Mordo nie ma małpy.</p>');
+    }
+  }catch(Exception $e){
+    echo $e->getMessage();
+  };
+
+  try{
+    if($zmienna < 20){
+        throw new Exception("liczba jest mniejsza od 20");
+    }
+    echo "Zmienna: $zmienna";
+  } catch (Exception $e) {
+    echo "<p>Wyjątek: </p>" . $e->getMessage();
+  } finally {
+    echo "<p>tekst zawsze sie pokazuje</p>";
+  };
+  
+
+
+
+
+
 
     session_destroy();
 
     ?>
+
 </body>
 </html>
