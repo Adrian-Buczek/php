@@ -134,8 +134,8 @@
             <h3>p2. Send location of user 💀</h3>
             <sub>Redirect form into <mark>exercise/p2.php</mark>, with correct method.</sub>
             <sub>Display <mark>on your own</mark> data that you got from request.</sub>
-            <input type="text" name="name" id="name" placeholder="Your name">
-            <select>
+            <input type="text" name="namee" id="name" placeholder="Your name">
+            <select name="selekt">
                 <option>Poland</option>
                 <option>Germany</option>
                 <option>Russia</option>
