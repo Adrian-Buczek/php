@@ -112,7 +112,7 @@
     <hr>
     <main>
         <!-- p1 -->
-        <form method="post" action="exercise/p1.php">
+        <form method="POST" action="exercise/p1.php">
             <h3>p1. Send user data form 🙂</h3>
             <sub>Redirect form into <mark>exercise/p1.php</mark>, with method <mark>POST</mark> and display variables from <mark>$_POST[]</mark>.</sub>
             <sub title="Check if `name` attribute isn't missing in inputs.">⚠️ Is missing something?</sub>
@@ -130,7 +130,7 @@
             </span>
         </form>
         <!-- p2 -->
-        <form>
+        <form method="POST" action="exercise/p2.php">
             <h3>p2. Send location of user 💀</h3>
             <sub>Redirect form into <mark>exercise/p2.php</mark>, with correct method.</sub>
             <sub>Display <mark>on your own</mark> data that you got from request.</sub>
@@ -148,22 +148,22 @@
             </span>
         </form>
         <!-- p3 -->
-        <form>
+        <form method="POST" action="exercise/p3.php">
             <h3>p3. Choose user gender form 👪</h3>
             <sub>Redirect form into <mark>exercise/p3.php</mark>, with correct method.</sub>
             <sub>ℹ️ Remember to include value into inputs</sub>
             <span>
-                <label for="">
-                    Men <input type="radio">
+                <label for="plec">
+                    Men <input type="radio" name="plec">
                 </label>
-                <label for="">
-                    Women <input type="radio">
+                <label for="plec">
+                    Women <input type="radio" name="plec">
                 </label>
-                <label for="">
-                    Other <input type="radio">
+                <label for="plec">
+                    Other <input type="radio" name="plec">
                 </label>
-                <label for="">
-                    Rather not say <input type="radio">
+                <label for="plec">
+                    Rather not say <input type="radio" name="plec">
                 </label>
             </span>
             <span>
@@ -171,7 +171,7 @@
             </span>
         </form>
         <!-- p4 -->
-        <form>
+        <form method="POST" action="exercise/p4.php">
             <h3>p4. Validate user form 🧮</h3>
             <sub>Validate: name (min 3 chars), surname (required), checkbox must be checked.</sub>
             <sub>Display errors or success message on <mark>exercise/p4.php</mark>.</sub>
