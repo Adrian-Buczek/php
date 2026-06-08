@@ -154,16 +154,16 @@
             <sub>ℹ️ Remember to include value into inputs</sub>
             <span>
                 <label for="plec">
-                    Men <input type="radio" name="plec">
+                    Man <input type="radio" name="plec" value="Man">
                 </label>
                 <label for="plec">
-                    Women <input type="radio" name="plec">
+                    Women <input type="radio" name="plec" value="Women">
                 </label>
                 <label for="plec">
-                    Other <input type="radio" name="plec">
+                    Other <input type="radio" name="plec" value="Inne">
                 </label>
                 <label for="plec">
-                    Rather not say <input type="radio" name="plec">
+                    Rather not say <input type="radio" name="plec" value="Ni ciula ci powiem">
                 </label>
             </span>
             <span>
@@ -176,10 +176,10 @@
             <sub>Validate: name (min 3 chars), surname (required), checkbox must be checked.</sub>
             <sub>Display errors or success message on <mark>exercise/p4.php</mark>.</sub>
             <sub>ℹ️ Use functions: <mark title="isset($_POST['NAME OF INPUT HERE']) - returns true/false depends of content of input">isset()</mark>, <mark title="empty($_POST['NAME OF INPUT HERE']) - returns true/false depends on emptiness of input">empty()</mark>, <mark title="strlen($_POST['NAME OF INPUT HERE']) - returns number of letters.">strlen()</mark></sub>
-            <input type="text" placeholder="Name here">
-            <input type="text" placeholder="Surname here">
+            <input type="text" placeholder="Name here" name="imiono">
+            <input type="text" placeholder="Surname here" name="drugieimiono">
             <label for="terms">
-                <input type="checkbox" id="terms">
+                <input type="checkbox" id="terms" name="czekoboks">
                 Do you agree on <a href="terms.php">terms</a>?
             </label>
             <span>
@@ -188,7 +188,7 @@
             </span>
         </form>
         <!-- p5 -->
-        <form>
+        <form action='./exercise/p5.php' method='POST'>
             <h3>p5. Create user in database ⚙️</h3>
             <sub>Redirect form into <mark>exercise/p5.php</mark>, with method correct method.</sub>
             <sub>Send data to table <mark>users</mark> - <a href='./database.sql'>database is ready to download here</a></sub>
@@ -202,7 +202,7 @@
             </span>
         </form>
         <!-- p6 -->
-        <form>
+        <form action='./exercise/p6.php' method='POST'>
             <h3>p6. Add excercise to database ➕</h3>
             <sub>Redirect form into <mark>exercise/p6.php</mark>, with method correct method.</sub>
             <label for="user_id">
@@ -242,7 +242,7 @@
             </span>
         </form>
         <!-- p7 -->
-        <form>
+        <form action='./exercise/p7.php' method='GET'>
             <h3>p7. Display user and their exercises from database 😶‍🌫️</h3>
             <sub>Redirect form into <mark>exercise/p7.php</mark> and display, with method <mark>GET</mark>.</sub>
             <sub title="Only thing you will need is id from table user and inner join to table exercise">Create correct form for this exercise.</sub>
