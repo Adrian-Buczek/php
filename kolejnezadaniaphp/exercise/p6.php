@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $conn = mysqli_connect("localhost", "root", "", "php_practice");
+    $con = mysqli_connect("localhost", "root", "", "php_practice");
     $idjuzera = $_POST['user_id'];
     $tejtyl = $_POST['title'];
     $subdzekt = $_POST['subject'];
@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $statusek = $_POST['status'];
     
     
-    $sqll = "INSERT INTO exercises (user_id, title, description, subject, due_date, status) VALUES ('$idjuzera','$tejtyl', '$teksty', '$subdzekt', ' $dataa', '$statusek')";
-    if (mysqli_query($conn, $sqll)){
+    $sql = "INSERT INTO exercises (user_id, title, description, subject, due_date, status) VALUES ('$idjuzera','$tejtyl', '$teksty', '$subdzekt', ' $dataa', '$statusek')";
+    if (mysqli_query($con, $sql)){
          echo"dodano zadania!";
     }else{
         echo"nie dodano";

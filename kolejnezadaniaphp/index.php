@@ -251,10 +251,24 @@
             </span>
         </form>
         <!-- p8 -->
-        <form>
+        <form action='./exercise/p8.php' method='POST'>
             <h3>p8. Delete user with their exercise ⚠️</h3>
             <sub>Redirect form into <mark>exercise/p8.php</mark>, with method <mark>POST</mark>.</sub>
             <sub title="Only thing you will need is id from table user and remember to remove first exercise">Create correct form for this exercise.</sub>
+            <select name="user_id" id="user_id">
+                    <?php
+                    $sql = "SELECT id, first_name FROM users";
+
+                    $result = mysqli_query($conn, $sql);
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $user_id = $row['id'];
+                        $first_name = $row['first_name'];
+
+                        echo "<option value='$user_id'>$first_name</option>";
+                    }
+                    ?>
+                </select>
             <span>
                 <button>Delete</button>
             </span>
