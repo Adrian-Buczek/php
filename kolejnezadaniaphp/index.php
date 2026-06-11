@@ -92,8 +92,8 @@
             if (localStorage.getItem('database') !== 'ok') {
                 let res
                 while (!(res = prompt("Before starting, please load `database.sql` into your phpmyadmin. \nType understood to close this window.") === 'understood')) {
-                    localStorage.setItem('database', 'ok');
                 }
+                localStorage.setItem('database', 'ok');
             }
         })
     </script>
@@ -257,14 +257,13 @@
             <sub title="Only thing you will need is id from table user and remember to remove first exercise">Create correct form for this exercise.</sub>
             <select name="user_id" id="user_id">
                     <?php
-                    $sql = "SELECT id, first_name FROM users";
+                    $sql = "SELECT id, first_name, last_name FROM users";
 
                     $result = mysqli_query($conn, $sql);
 
                     while ($row = mysqli_fetch_assoc($result)) {
                         $user_id = $row['id'];
                         $first_name = $row['first_name'];
-
                         echo "<option value='$user_id'>$first_name</option>";
                     }
                     ?>
